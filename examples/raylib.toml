@@ -1,0 +1,27 @@
+name = "mygame"
+
+[src]
+
+path = "src"
+libraries = ["raylib"]
+main_file.contents = '''
+#include <raylib.h>
+
+int main() {
+    InitWindow(800, 600, "Hello from template!");
+
+    while (!WindowShouldClose()) {
+        BeginDrawing();
+        ClearBackground(BLACK);
+        EndDrawing();
+    }
+
+    CloseWindow();
+
+    return 0;
+}
+'''
+
+[packages]
+# raylib = { git = { url = "https://github.com/raysan5/raylib.git", tag = "5.5" } }
+raylib = { download = { url = "https://github.com/raysan5/raylib/archive/refs/tags/5.5.tar.gz" } }

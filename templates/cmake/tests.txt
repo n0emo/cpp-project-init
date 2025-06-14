@@ -1,0 +1,14 @@
+{#- vim: ft=jinja: -#}
+
+add_executable({{+ name }}_test
+    {{+ sources | join("\n") | indent(4) }}
+)
+
+target_link_libraries({{+ name }}_test
+    {{+ name }}_lib
+    gtest
+    gtest_main
+)
+
+include(GoogleTest)
+gtest_discover_tests({{ name }}_test)

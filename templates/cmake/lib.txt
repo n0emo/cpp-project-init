@@ -1,0 +1,23 @@
+{#- vim: ft=jinja: -#}
+include(FetchContent)
+
+{% for package in fetch_packages %}
+FetchContent_Declare(
+    {{+ package.name -}}
+{%- if let Some(url) = package.url +%}
+    URL {{ url -}}
+{% endif -%}
+{%- if let Some(checksum) = package.checksum +%}
+    URL_HASH {{ checksum -}}
+{% endif -%}
+{%- if let Some(git_url) = package.git_url +%}
+    GIT_REPOSITORY {{ git_url -}}
+{% endif -%}
+{%- if let Some(git_tag) = package.git_tag +%}
+    GIT_TAG {{ git_tag -}}
+{%- endif +%}
+)
+{%- endfor +%}
+
+message(STATUS "Fetching packages")
+FetchContent_MakeAvailable({% for package in fetch_packages %}{{ package.name }} {%- endfor %})

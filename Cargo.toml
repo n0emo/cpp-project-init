@@ -1,0 +1,15 @@
+[package]
+name = "cpp-project-init"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.98"
+askama = "0.14.0"
+clap = { version = "4.5.40", features = ["derive"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde-xml-rs = "0.8.1"
+serde_json = "1.0.140"
+serde_yml = "0.0.12"
+thiserror = "2.0.12"
+toml = "0.8.23"
