@@ -7,7 +7,6 @@ use project::Project;
 pub(crate) mod cli;
 pub(crate) mod cmake;
 pub(crate) mod project;
-pub(crate) mod utils;
 
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
