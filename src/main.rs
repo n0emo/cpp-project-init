@@ -1,3 +1,38 @@
+// TODO: Bake some default templates into executable
+//         - [ ] Minimal
+//         - [ ] Gtest
+//         - [ ] Raylib
+//
+// TODO: Unit tests
+//         - [ ] Collect test coverage
+//         - [ ] Unit tests for Cmake generators
+//
+// TODO: Init command
+//
+// TODO: Improve libraries generation
+//         - [ ] Do not create lib directory if it contains only CMakeLists.txt
+//         - [ ] External packages
+//         - [ ] Prefetch packages
+//
+// TODO: Read templates from config directories
+//         - [ ] Read from system configs
+//         - [ ] Read from XDG-something user configs
+//
+// TODO: Catch2 testing backend
+//
+// TODO: README.md
+//
+// TODO: More backend support
+//         - [ ] Xmake backend
+//         - [ ] Meson backend
+//         - [ ] Allow per-backend tweaks in config
+//
+// TODO: C language support
+//
+// TODO: GUI
+//         - [ ] Decide the framework
+//         - [ ] Split project to lib and cli executable
+//         - [ ] GUI executable
 use std::fs;
 
 use clap::Parser;
