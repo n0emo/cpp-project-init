@@ -2,11 +2,14 @@ use std::fs;
 
 use clap::Parser;
 use cli::Cli;
+use generators::{CmakeProject, Generator};
 use project::Project;
 
 pub(crate) mod cli;
-pub(crate) mod cmake;
 pub(crate) mod project;
+pub(crate) mod generators;
+pub(crate) mod tree;
+pub(crate) mod strings;
 
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
@@ -25,9 +28,7 @@ fn main() -> anyhow::Result<()> {
             fs::create_dir_all(&out)?;
 
             match cli.generate.build_system {
-                cli::BuildSystem::Cmake => {
-                    cmake::generate(project, out)?;
-                }
+                cli::BuildSystem::Cmake => CmakeProject::generate(project, &out)?,
             }
         }
 

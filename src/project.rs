@@ -109,7 +109,7 @@ fn default_tests_sources() -> HashMap<String, SourceFile> {
     )])
 }
 
-#[derive(Default, Debug, Serialize, Deserialize)]
+#[derive(Clone, Copy, Default, Debug, Serialize, Deserialize)]
 pub enum TestingFramework {
     #[default]
     GoogleTest,

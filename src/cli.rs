@@ -1,4 +1,4 @@
-use std::fmt::Display;
+use std::{fmt::Display, path::PathBuf};
 
 use clap::{Args, Parser, Subcommand, ValueEnum};
 
@@ -39,7 +39,7 @@ impl Display for BuildSystem {
 #[derive(Debug, Subcommand)]
 pub enum Command {
     New {
-        out: String,
+        out: PathBuf,
     },
 
     Init { },
